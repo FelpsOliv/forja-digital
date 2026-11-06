@@ -3,7 +3,7 @@ export const siteConfig = {
   wordmark: 'FORJA.',
   descriptor: 'DIGITAL STUDIO',
   slogan: 'Sua presença digital, bem construída.',
-  website: '',
+  website: 'https://forja-digital-ecru.vercel.app',
   contact: {
     whatsapp: '5515998343962',
     email: '',

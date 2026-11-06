@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://forja-digital-ecru.vercel.app/sitemap.xml
