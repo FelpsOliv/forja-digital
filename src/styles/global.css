@@ -7,11 +7,14 @@
   --ink: #151515;
   --graphite: #242424;
   --orange: #ff762e;
+  --orange-text-light: #b33b00;
+  --orange-text-on-orange: #5f2000;
   --color-cta: #ff5a1f;
   --color-cta-hover: #ff713d;
   --color-cta-active: #e94b13;
   --paper: #f5f2ed;
   --gray: #a6a6a6;
+  --text-muted-dark: #858585;
   --white: #ffffff;
   --line-dark: rgba(255, 255, 255, 0.14);
   --line-light: rgba(21, 21, 21, 0.16);
@@ -28,6 +31,7 @@ img, svg { display: block; max-width: 100%; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
 :focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.section-light :focus-visible, .finder-panel fieldset :focus-visible { outline-color: var(--ink); }
 ::selection { color: var(--ink); background: var(--orange); }
 
 .skip-link { position: fixed; z-index: 1000; top: 12px; left: 12px; padding: 10px 16px; color: var(--ink); background: var(--white); transform: translateY(-150%); }
@@ -43,6 +47,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .section-heading { display: block; }
 .section-heading h2 { max-width: 1080px; margin: 0; font: 600 clamp(2.5rem, 5.5vw, 5.4rem)/0.93 var(--display); letter-spacing: -0.065em; text-transform: uppercase; }
 .section-heading h2 span, .comparison-title h2 span { color: var(--orange); }
+.section-light .section-heading h2 span { color: var(--orange-text-light); }
 .section-heading .section-intro { max-width: 670px; margin: 35px 0 0; font-size: 1.1rem; line-height: 1.65; color: #535353; }
 .section-heading-dark .section-intro { color: var(--gray); }
 

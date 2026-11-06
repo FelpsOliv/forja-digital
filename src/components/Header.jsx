@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { siteConfig } from '../config/site'
 import { getWhatsAppLink } from '../utils/contact'
@@ -12,13 +12,19 @@ const navItems = [
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const menuButtonRef = useRef(null)
   const contactLink = getWhatsAppLink()
 
   useEffect(() => {
-    const closeOnEscape = (event) => event.key === 'Escape' && setOpen(false)
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape' && open) {
+        setOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
     window.addEventListener('keydown', closeOnEscape)
     return () => window.removeEventListener('keydown', closeOnEscape)
-  }, [])
+  }, [open])
 
   return (
     <header className="site-header">
@@ -27,6 +33,7 @@ export default function Header() {
         <small>{siteConfig.descriptor}</small>
       </a>
       <button
+        ref={menuButtonRef}
         className="menu-toggle"
         type="button"
         aria-expanded={open}
